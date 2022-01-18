@@ -1,0 +1,13 @@
+.rewards-display {
+    border: 1px solid turquoise;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reward {
+    border: 1px solid orange;
+    margin: 2px;
+    width: 60%;
+}
