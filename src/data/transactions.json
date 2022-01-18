@@ -2,61 +2,85 @@
     {
         "userId": "test_user_1",
         "amount": 56.00,
-        "data": "test_data_1"
+        "data": "test_data_1",
+        "date": "2021-04-15"
     },
     {
         "userId": "test_user_2",
         "amount": 109.00,
-        "data": "test_data_2"
+        "data": "test_data_2",
+        "date": "2021-06-02"
     },
     {
         "userId": "test_user_1",
         "amount": 148.00,
-        "data": "test_data_3"
+        "data": "test_data_3",
+        "date": "2021-05-10"
     },
     {
         "userId": "test_user_3",
         "amount": 300.00,
-        "data": "test_data_4"
+        "data": "test_data_4",
+        "date": "2021-05-18"
     },
     {
         "userId": "test_user_3",
         "amount": 156.00,
-        "data": "test_data_5"
+        "data": "test_data_5",
+        "date": "2021-04-11"
     },
     {
         "userId": "test_user_1",
         "amount": 162.00,
-        "data": "test_data_6"
+        "data": "test_data_6",
+        "date": "2021-06-22"
     },
     {
         "userId": "test_user_2",
         "amount": 227.00,
-        "data": "test_data_7"
+        "data": "test_data_7",
+        "date": "2021-04-15"
     },
     {
         "userId": "test_user_1",
         "amount": 97.00,
-        "data": "test_data_8"
+        "data": "test_data_8",
+        "date": "2021-04-29"
     },
     {
         "userId": "test_user_3",
         "amount": 50.00,
-        "data": "test_data_9"
+        "data": "test_data_9",
+        "date": "2021-06-12"
     },
     {
         "userId": "test_user_1",
         "amount": 100.00,
-        "data": "test_data_10"
+        "data": "test_data_10",
+        "date": "2021-04-01"
     },
     {
         "userId": "test_user_2",
         "amount": 120.00,
-        "data": "test_data_11"
+        "data": "test_data_11",
+        "date": "2021-05-02"
     },
     {
         "userId": "test_user_2",
         "amount": 128.00,
-        "data": "test_data_1"
+        "data": "test_data_12",
+        "date": "2021-06-16"
+    },
+    {
+        "userId": "test_user_3",
+        "amount": 88.00,
+        "data": "test_data_13",
+        "date": "2021-06-07"
+    },
+    {
+        "userId": "test_user_3",
+        "amount": 200.00,
+        "data": "test_data_9",
+        "date": "2021-05-30"
     }
 ]

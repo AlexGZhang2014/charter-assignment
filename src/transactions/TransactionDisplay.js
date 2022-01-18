@@ -9,6 +9,20 @@ const TransactionDisplay = () => {
     const [isCalculated, setIsCalculated] = useState(false);
     const [totalRewardPoints, setTotalRewardPoints] = useState(0);
     const [userData, setUserData] = useState([]);
+    const months = {
+        "01": "January",
+        "02": "February",
+        "03": "March",
+        "04": "April",
+        "05": "May",
+        "06": "June",
+        "07": "July",
+        "08": "August",
+        "09": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+    }
 
     useEffect(() => {
         getTransactions();
@@ -18,7 +32,7 @@ const TransactionDisplay = () => {
         setTransactions(transactionData);
     }
 
-    const calculateTotalRewardPoints = (transaction) => {
+    const calculateRewardPoints = (transaction) => {
         let totalRewardPoints = 0;
         let difference = transaction.amount - 50;
         if (difference <= 50) {
@@ -33,15 +47,32 @@ const TransactionDisplay = () => {
     const calculateUserRewardPoints = () => {
         const transactionMap = {};
         let totalRewardPoints = 0;
-        transactionData.forEach(transaction => {
-            const rewardPoints = calculateTotalRewardPoints(transaction);
+        transactions.forEach(transaction => {
+            const monthNum = transaction.date.split("-")[1];
+            const month = months[monthNum];
+            const rewardPoints = calculateRewardPoints(transaction);
             totalRewardPoints += rewardPoints;
             if (transaction.userId in transactionMap) {
-                transactionMap[transaction.userId].rewardPoints += rewardPoints;
+                if (month in transactionMap[transaction.userId].rewardPoints) {
+                    transactionMap[transaction.userId].totalRewardPoints += rewardPoints;
+                    transactionMap[transaction.userId].rewardPoints[month].rewardPoints += rewardPoints;
+                } else {
+                    transactionMap[transaction.userId].totalRewardPoints += rewardPoints;
+                    transactionMap[transaction.userId].rewardPoints[month] = {
+                        month: month,
+                        rewardPoints: rewardPoints
+                    }
+                }
             } else {
                 transactionMap[transaction.userId] = {
                     userId: transaction.userId,
-                    rewardPoints: rewardPoints
+                    totalRewardPoints: rewardPoints,
+                    rewardPoints: {
+                        [month]: {
+                            month: month,
+                            rewardPoints: rewardPoints
+                        }
+                    }
                 }
             }
         })
